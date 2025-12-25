@@ -165,7 +165,7 @@ class TemplateEngine:
             error_msg = f"配置验证失败: {str(e)}"
             return False, error_msg, None
 
-    def apply_template(
+    async def apply_template(
         self,
         url: str,
         template_config: TemplateConfigSchema,

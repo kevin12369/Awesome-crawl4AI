@@ -22,16 +22,16 @@ async def lifespan(app: FastAPI):
     Application lifespan management
     """
     # 启动时初始化
-    print("🚀 正在启动 Awesome-crawl4AI 后端服务...")
+    print("[START] Starting Awesome-crawl4AI backend service...")
     await init_db()
-    print("✅ 数据库初始化完成")
+    print("[OK] Database initialized")
 
     yield
 
     # 关闭时清理
-    print("🛑 正在关闭服务...")
+    print("[STOP] Shutting down service...")
     await close_db()
-    print("✅ 服务已关闭")
+    print("[OK] Service closed")
 
 
 # 创建FastAPI应用
