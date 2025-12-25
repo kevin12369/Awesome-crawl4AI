@@ -52,7 +52,7 @@
 
 ```bash
 # 1. 克隆项目 / Clone the project
-git clone https://github.com/your-username/Awesome-crawl4AI.git
+git clone https://github.com/kevin12369/Awesome-crawl4AI.git
 cd Awesome-crawl4AI
 
 # 2. 启动服务 / Start services
@@ -304,7 +304,7 @@ npm run test
   - [API 文档](docs/API.md)
   - [场景开发指南](docs/SCENARIO_GUIDE.md)
   - [部署指南](docs/DEPLOYMENT.md)
-- **问题反馈：** [GitHub Issues](https://github.com/your-username/Awesome-crawl4AI/issues)
+- **问题反馈：** [GitHub Issues](https://github.com/kevin12369/Awesome-crawl4AI/issues)
 
 ---
 
@@ -335,6 +335,6 @@ npm run test
 
 **如果这个项目对你有帮助，请给个 Star ⭐**
 
-**Built with ❤️ by 老王**
+**Built with ❤️ by [kevin12369](https://github.com/kevin12369)**
 
 </div>
