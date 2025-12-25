@@ -1,6 +1,6 @@
 # Awesome-crawl4AI API 文档
 
-艹，这是完整的API接口文档，看不懂就来问老王！
+艹，这是完整的API接口文档，看不懂就来问Kevin！
 
 ---
 
@@ -822,7 +822,7 @@ async function getTasks() {
 
 ---
 
-艹，文档写完了！有问题找老王！
+艹，文档写完了！有问题找Kevin！
 
 **文档版本 / Version：** 1.0.0
 **最后更新 / Last Updated：** 2025-12-25
