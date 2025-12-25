@@ -32,8 +32,8 @@ passlib[bcrypt]==1.7.4
 python-dotenv==1.0.0
 
 # Utils
-aiofiles==23.2.1
-python-dateutil==2.8.2
+aiofiles>=24.1.0
+python-dateutil>=2.8.2
 
 # Development Dependencies
 pytest==7.4.4
