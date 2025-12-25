@@ -1,0 +1,190 @@
+# ========================================
+# Awesome-crawl4AI 项目依赖清单
+# ========================================
+# 安装方法:
+#   pip install -r requirements.txt         # 生产环境
+#   pip install -r requirements-dev.txt     # 开发环境
+#   pip install -e .                        # 可编辑安装
+#
+# 依赖分组说明:
+#   核心依赖: 运行时必需的包
+#   测试依赖: 运行测试所需的包
+#   开发依赖: 代码质量工具和格式化工具
+
+# ===========================
+# 核心依赖 (Core Dependencies)
+# ===========================
+
+# HTTP 客户端 - 异步和同步请求
+httpx>=0.25.0              # 现代化的 HTTP 客户端，支持异步
+aiohttp>=3.9.0             # 异步 HTTP 客户端/服务器
+
+# HTML/XML 解析
+beautifulsoup4>=4.12.0     # HTML 解析库
+lxml>=4.9.0                # 高性能 XML/HTML 处理器
+html5lib>=1.1              # HTML5 解析器（备用）
+
+# 数据提取和转换
+markdownify>=0.11.0        # HTML 转 Markdown
+readability-lxml>=0.8.1    # 网页主要内容提取
+trafilatura>=1.6.0         # 网页文本和元数据提取
+
+# 数据验证和序列化
+pydantic>=2.0.0            # 数据验证和设置管理
+pydantic-settings>=2.0.0   # Pydantic 的设置管理扩展
+
+# 配置管理
+python-dotenv>=1.0.0       # 从 .env 文件加载环境变量
+pyyaml>=6.0                # YAML 解析器
+toml>=0.10.2               # TOML 解析器
+
+# 异步支持
+asyncio>=3.4.3             # 异步 I/O 库（Python 标准库，但指定版本）
+nest-asyncio>=1.5.8        # 嵌套异步事件循环支持
+
+# 重试和容错
+tenacity>=8.2.0            # 通用重试库
+backoff>=2.2.1             # 指数退避重试装饰器
+
+# 浏览器自动化（可选）
+playwright>=1.40.0         # 现代化的浏览器自动化工具
+selenium>=4.15.0           # 传统的浏览器自动化工具
+
+# 代理和反爬虫
+fake-useragent>=1.4.0      # User-Agent 生成器
+requests>=2.31.0           # 同步 HTTP 库（某些场景需要）
+
+# 数据处理
+pandas>=2.0.0              # 数据分析和处理（可选）
+numpy>=1.24.0              # 数值计算（可选）
+
+# 日志和监控
+loguru>=0.7.0              # 简单易用的日志库
+rich>=13.0.0               # 终端美化输出（进度条、表格等）
+
+# 任务队列（可选）
+celery>=5.3.0              # 分布式任务队列
+redis>=5.0.0               # Redis 客户端
+
+# AI/ML 集成（可选）
+openai>=1.0.0              # OpenAI API 客户端
+langchain>=0.1.0           # LLM 应用开发框架
+anthropic>=0.18.0          # Anthropic API 客户端
+
+# 工具库
+tqdm>=4.66.0               # 进度条
+click>=8.1.0               # 命令行界面工具
+python-dateutil>=2.8.2     # 日期时间处理
+
+# ===========================
+# 类型检查 (Type Stubs)
+# ===========================
+
+# 类型存根（提供更好的类型提示）
+types-requests>=2.31.0
+types-PyYAML>=6.0.0
+types-redis>=4.6.0
+
+# ===========================
+# 测试依赖 (Testing Dependencies)
+# ===========================
+
+# 测试框架
+pytest>=7.4.0              # 现代化的测试框架
+pytest-asyncio>=0.21.0     # pytest 的异步测试支持
+pytest-cov>=4.1.0          # pytest 的覆盖率插件
+pytest-mock>=3.12.0        # pytest 的 mock 对象支持
+pytest-xdist>=3.5.0        # pytest 的并行测试支持
+pytest-timeout>=2.2.0      # 测试超时控制
+
+# 测试工具
+pytest-html>=3.2.0         # HTML 测试报告
+pytest-randomly>=3.15.0    # 随机化测试顺序
+freezegun>=1.4.0           # 时间冻结（测试时间相关代码）
+responses>=0.24.0          # 模拟 HTTP 响应
+vcrpy>=6.0.0               # 记录和重放 HTTP 交互
+
+# 覆盖率
+coverage[toml]>=7.3.0      # 代码覆盖率工具
+
+# ===========================
+# 代码质量工具 (Code Quality)
+# ===========================
+
+# 代码格式化
+black>=23.0.0              # 代码格式化工具
+isort>=5.12.0              # 导入语句排序工具
+
+# 代码检查
+flake8>=6.0.0              # PEP 8 代码风格检查
+flake8-bugbear>=24.0.0     # 额外的错误检查
+flake8-comprehensions>=3.14.0  # 列表推导式检查
+flake8-simplify>=0.20.0    # 代码简化建议
+pydocstyle>=6.3.0          # 文档字符串风格检查
+
+# 类型检查
+mypy>=1.5.0                # 静态类型检查
+
+# 安全性检查
+bandit[toml]>=1.7.8        # 安全漏洞扫描器
+safety>=2.3.0              # 依赖包安全检查
+
+# 代码复杂度分析
+radon>=6.0.0               # 代码复杂度分析
+xenon>=0.9.0               # 监控代码复杂度
+
+# ===========================
+# 开发工具 (Development Tools)
+# ===========================
+
+# Git 钩子
+pre-commit>=3.3.0          # Git 预提交钩子框架
+
+# 文档生成
+mkdocs>=1.5.0              # 静态站点生成器
+mkdocs-material>=9.0.0     # Material Design 主题
+mkdocstrings[python]>=0.23.0  # 从 docstring 生成 API 文档
+
+# 性能分析
+py-spy>=0.3.14             # Python 性能分析器
+line-profiler>=4.1.0       # 行级性能分析
+memory-profiler>=0.61.0    # 内存分析
+
+# 调试工具
+ipdb>=0.13.0               # IPython 调试器
+ipython>=8.18.0            # 增强的 Python 交互式解释器
+
+# 依赖管理
+pip-audit>=2.6.0           # 审计依赖包的安全性
+pipdeptree>=2.16.0         # 显示依赖树
+
+# ===========================
+# 部署工具 (Deployment Tools)
+# ===========================
+
+# 构建工具
+build>=0.10.0              # PEP 517 构建工具
+twine>=4.0.0               # 上传包到 PyPI
+setuptools>=68.0.0         # 包构建工具
+wheel>=0.41.0              # Wheel 包格式
+
+# Docker 支持
+docker>=6.1.0              # Docker Python SDK
+
+# ===========================
+# 注意事项
+# ===========================
+#
+# 1. 可选依赖的安装:
+#    pip install -e ".[playwright,selenium,all]"
+#
+# 2. 开发依赖分离:
+#    将测试和开发工具移至 requirements-dev.txt
+#
+# 3. 版本锁定:
+#    生产环境建议使用 requirements.lock 锁定确切版本
+#
+# 4. 虚拟环境:
+#    python -m venv venv
+#    source venv/bin/activate  # Linux/Mac
+#    venv\Scripts\activate     # Windows

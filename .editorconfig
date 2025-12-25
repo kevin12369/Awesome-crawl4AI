@@ -1,0 +1,194 @@
+# ================================
+# Awesome-crawl4AI - EditorConfig
+# ================================
+# 此文件定义跨编辑器和 IDE 的编码风格
+# 支持：VS Code, PyCharm, Sublime Text, Atom, Vim 等
+# 更多信息：https://editorconfig.org
+
+# ================================
+# 默认配置（适用于所有文件）
+# ================================
+[*]
+# 字符编码
+charset = utf-8
+
+# 行结尾样式（lf = Unix, crlf = Windows）
+end_of_line = lf
+
+# 文件末尾插入新行
+insert_final_newline = true
+
+# 移除行尾空格
+trim_trailing_whitespace = true
+
+# 缩进样式（space = 空格, tab = Tab）
+indent_style = space
+
+# 缩进大小（空格数）
+indent_size = 4
+
+# Tab 宽度（当 indent_style = tab 时使用）
+tab_width = 4
+
+# ================================
+# Python 文件
+# ================================
+[*.py]
+# Python 使用 4 空格缩进（PEP 8）
+indent_size = 4
+max_line_length = 100
+
+# ================================
+# 配置文件（TOML, YAML, INI）
+# ================================
+[*.{toml,yaml,yml,ini,cfg}]
+indent_size = 2
+
+# ================================
+# Markdown 文件
+# ================================
+[*.md]
+# Markdown 使用 2 空格缩进
+indent_size = 2
+
+# Markdown 中保留行尾空格（有时用于换行）
+trim_trailing_whitespace = false
+
+# Markdown 中允许连续空行（有时用于格式）
+insert_final_newline = true
+
+# ================================
+# JSON 文件
+# ================================
+[*.json]
+indent_size = 2
+
+# JSON 中不允许尾部逗号（标准 JSON）
+# 但 JSONC (JSON with Comments) 允许
+
+# ================================
+# JavaScript/TypeScript 文件
+# ================================
+[*.{js,ts,jsx,tsx}]
+indent_size = 2
+
+# ================================
+# HTML/CSS 文件
+# ================================
+[*.{html,htm,css,scss,less}]
+indent_size = 2
+
+# ================================
+# Shell 脚本
+# ================================
+[*.{sh,bash}]
+# Shell 脚本使用 2 空格缩进
+indent_size = 2
+
+# Unix 风格的行结尾
+end_of_line = lf
+
+# ================================
+# Batch 文件（Windows）
+# ================================
+[*.{bat,cmd}]
+# Windows 批处理文件
+end_of_line = crlf
+
+# ================================
+# Makefile
+# ================================
+[Makefile]
+# Makefile 必须使用 Tab 缩进
+indent_style = tab
+
+# ================================
+# Dockerfile
+# ================================
+[Dockerfile*]
+indent_size = 4
+
+# ================================
+# XML 文件
+# ================================
+[*.{xml,xslt}]
+indent_size = 2
+
+# ================================
+# YAML 特定配置
+# ================================
+[*.{yml,yaml}]
+# 确保一致性
+indent_size = 2
+
+# ================================
+# 特殊文件
+# ================================
+
+# .gitignore 和类似文件
+[.gitignore]
+indent_size = 2
+charset = utf-8
+
+# .env 文件
+[.env*]
+indent_size = 2
+charset = utf-8
+
+# ================================
+# 文档文件
+# ================================
+
+# reStructuredText
+[*.rst]
+indent_size = 3
+
+# Text 文件
+[*.txt]
+charset = utf-8
+
+# ================================
+# 代码配置文件
+# ================================
+
+# pyproject.toml
+[pyproject.toml]
+indent_size = 4
+
+# setup.cfg
+[setup.cfg]
+indent_size = 4
+
+# ================================
+# 编辑器特定配置
+# ================================
+
+# VS Code
+# 确保安装 EditorConfig 插件
+# 设置：editor.formatOnSave = true
+
+# PyCharm
+# Settings → Editor → Code Style → EditorConfig
+# 启用：Enable EditorConfig Support
+
+# Vim
+# 需要：vim-editorconfig 插件
+# 安装：:PluginInstall 'editorconfig/editorconfig-vim'
+
+# Sublime Text
+# 需要：EditorConfig 插件
+# 安装：Package Control → EditorConfig
+
+# ================================
+# 注意事项
+# ================================
+#
+# 1. 此文件定义的是通用编码规范
+# 2. 特定工具（如 Black）的配置优先级更高
+# 3. 如果工具配置与此文件冲突，以工具配置为准
+# 4. 某些编辑器需要安装插件才能支持
+# 5. Windows 用户注意 Git 的自动行结尾转换
+#
+# Git 配置建议：
+#   git config --global core.autocrlf input  # Linux/Mac
+#   git config --global core.autocrlf true   # Windows

@@ -1,0 +1,191 @@
+# ========================================
+# Awesome-crawl4AI 开发依赖清单
+# ========================================
+# 安装方法:
+#   pip install -r requirements-dev.txt
+#
+# 说明:
+#   此文件包含开发和测试所需的依赖
+#   生产环境只需要 requirements.txt 中的核心依赖
+
+# ===========================
+# 测试框架
+# ===========================
+
+# 基础测试框架
+pytest>=7.4.0              # 现代化的测试框架
+pytest-asyncio>=0.21.0     # pytest 的异步测试支持
+pytest-cov>=4.1.0          # pytest 的覆盖率插件
+pytest-mock>=3.12.0        # pytest 的 mock 对象支持
+pytest-xdist>=3.5.0        # pytest 的并行测试支持
+pytest-timeout>=2.2.0      # 测试超时控制
+pytest-html>=3.2.0         # HTML 测试报告
+pytest-randomly>=3.15.0    # 随机化测试顺序
+pytest-clarity>=1.0.1      # 更清晰的错误报告
+
+# 测试辅助工具
+freezegun>=1.4.0           # 时间冻结（测试时间相关代码）
+responses>=0.24.0          # 模拟 HTTP 响应
+vcrpy>=6.0.0               # 记录和重放 HTTP 交互
+faker>=23.0.0              # 生成测试数据
+factory-boy>=3.3.0         # 测试数据工厂
+
+# 覆盖率工具
+coverage[toml]>=7.3.0      # 代码覆盖率工具
+pytest-cov>=4.1.0          # pytest 的覆盖率插件
+
+# ===========================
+# 代码格式化
+# ===========================
+
+# 代码格式化工具
+black>=23.0.0              # Python 代码格式化工具
+isort>=5.12.0              # 导入语句排序工具
+autoflake>=2.2.0           # 自动移除未使用的导入
+autopep8>=2.0.0            # PEP 8 自动格式化
+
+# YAML/TOML 格式化
+yamlfix>=1.2.0             # YAML 文件格式化
+toml-sort>=0.23.0          # TOML 文件格式化
+
+# ===========================
+# 代码检查 (Linting)
+# ===========================
+
+# 代码风格检查
+flake8>=6.0.0              # PEP 8 代码风格检查
+flake8-bugbear>=24.0.0     # 额外的错误检查（捕获常见错误）
+flake8-comprehensions>=3.14.0  # 列表推导式检查
+flake8-simplify>=0.20.0    # 代码简化建议
+flake8-docstrings>=1.7.0   # 文档字符串检查
+flake8-blind-except>=0.2.0 # 检查裸 except
+flake8-broken-line>=0.6.0  # 检查破损的行
+flake8-commas>=2.1.0       # 逗号检查
+flake8-debugger>=4.1.2     # 检查调试语句
+flake8-eradicate>=1.5.0    # 检查死代码
+flake8-isort>=6.1.0        # isort 与 flake8 集成
+flake8-quotes>=3.3.0       # 引号风格检查
+flake8-self>=0.8.0         # 检查多余的 self 参数
+pydocstyle>=6.3.0          # 文档字符串风格检查
+
+# ===========================
+# 类型检查
+# ===========================
+
+# 静态类型检查
+mypy>=1.5.0                # 静态类型检查器
+types-requests>=2.31.0     # requests 类型存根
+types-PyYAML>=6.0.0        # PyYAML 类型存根
+types-redis>=4.6.0         # redis 类型存根
+types-aiofiles>=23.0.0     # aiofiles 类型存根
+
+# ===========================
+# 安全性检查
+# ===========================
+
+# 安全扫描
+bandit[toml]>=1.7.8        # 安全漏洞扫描器
+safety>=2.3.0              # 依赖包安全检查
+pip-audit>=2.6.0           # 审计依赖包的安全性
+
+# ===========================
+# 代码质量分析
+# ===========================
+
+# 代码复杂度和质量
+radon>=6.0.0               # 代码复杂度分析
+xenon>=0.9.0               # 监控代码复杂度
+pylint>=3.0.0              # 代码质量分析工具
+pycodestyle>=2.11.0        # PEP 8 风格检查
+
+# ===========================
+# Git 钩子
+# ===========================
+
+# Git 预提交钩子
+pre-commit>=3.3.0          # Git 预提交钩子框架
+pre-commit-hooks>=4.5.0    # 常用的预提交钩子集合
+
+# ===========================
+# 文档生成
+# ===========================
+
+# 文档工具
+mkdocs>=1.5.0              # 静态站点生成器
+mkdocs-material>=9.0.0     # Material Design 主题
+mkdocstrings[python]>=0.23.0  # 从 docstring 生成 API 文档
+mkdocs-redirects>=1.2.0    # 页面重定向
+mkdocs-minify-plugin>=0.7.0 # 压缩输出
+
+# 文档相关
+sphinx>=7.2.0              # 文档生成工具
+sphinx-rtd-theme>=2.0.0    # Read the Docs 主题
+sphinx-autodoc-typehints>=2.0.0  # 类型提示集成
+
+# ===========================
+# 性能分析
+# ===========================
+
+# 性能剖析工具
+py-spy>=0.3.14             # Python 性能分析器（采样）
+line-profiler>=4.1.0       # 行级性能分析
+memory-profiler>=0.61.0    # 内存分析
+scalene>=1.5.0             # CPU 和内存分析器
+
+# ===========================
+# 调试工具
+# ===========================
+
+# 调试和开发工具
+ipdb>=0.13.0               # IPython 调试器
+ipython>=8.18.0            # 增强的 Python 交互式解释器
+ipykernel>=6.28.0          # Jupyter 内核
+jupyter>=1.0.0             # Jupyter Notebook
+
+# ===========================
+# 依赖管理
+# ===========================
+
+# 依赖分析和管理
+pipdeptree>=2.16.0         # 显示依赖树
+pip-check>=2.0.0           # 检查依赖更新
+pip-autoremove>=0.10.0     # 自动移除未使用的依赖
+
+# ===========================
+# 构建和发布
+# ===========================
+
+# 打包和发布
+build>=0.10.0              # PEP 517 构建工具
+twine>=4.0.0               # 上传包到 PyPI
+setuptools>=68.0.0         # 包构建工具
+wheel>=0.41.0              # Wheel 包格式
+
+# ===========================
+# 其他实用工具
+# ===========================
+
+# 实用工具
+rich>=13.0.0               # 终端美化输出
+typer>=0.9.0               # 命令行界面工具
+watchdog>=4.0.0            # 文件监控
+tox>=4.11.0                # 自动化测试环境管理
+
+# ===========================
+# 说明
+# ===========================
+#
+# 1. 安装开发依赖:
+#    pip install -r requirements-dev.txt
+#
+# 2. 设置预提交钩子:
+#    pre-commit install
+#
+# 3. 运行所有检查:
+#    pre-commit run --all-files
+#
+# 4. 运行测试:
+#    pytest
+#
+# 5. 类型检查:
+#    mypy packages/

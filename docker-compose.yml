@@ -1,0 +1,93 @@
+# 艹，Docker Compose配置 - 一键启动整个服务栈！
+# Docker Compose configuration - One-click start the entire service stack!
+
+version: '3.8'
+
+services:
+  # 主应用服务 / Main application service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: awesome-crawl4ai
+    ports:
+      - "8000:8000"  # API端口 / API port
+    volumes:
+      # 数据持久化 / Data persistence
+      - ./data:/app/data
+      # 开发模式：挂载后端代码热重载 / Dev mode: mount backend for hot reload
+      - ./backend:/app/backend
+    environment:
+      # 环境变量 / Environment variables
+      - DATABASE_URL=sqlite+aiosqlite:///./data/crawl4ai.db
+      - CORS_ORIGINS=http://localhost:3000,http://localhost:8000
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - crawl4ai-network
+
+  # Nginx反向代理（可选）/ Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: awesome-crawl4ai-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./frontend/dist:/usr/share/nginx/html:ro
+    depends_on:
+      - app
+    restart: unless-stopped
+    networks:
+      - crawl4ai-network
+    profiles:
+      - production  # 艹，生产环境才启用 / Only enable in production
+
+  # Redis（用于任务队列，可选）/ Redis (for task queue, optional)
+  redis:
+    image: redis:7-alpine
+    container_name: awesome-crawl4ai-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+    networks:
+      - crawl4ai-network
+    profiles:
+      - with-redis  # 艹，需要任务队列时启用 / Enable when task queue is needed
+
+  # PostgreSQL（可选，替代SQLite）/ PostgreSQL (optional, replace SQLite)
+  postgres:
+    image: postgres:15-alpine
+    container_name: awesome-crawl4ai-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=crawl4ai
+      - POSTGRES_USER=crawl4ai
+      - POSTGRES_PASSWORD=crawl4ai_password
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - crawl4ai-network
+    profiles:
+      - with-postgres  # 艹，需要PostgreSQL时启用 / Enable when PostgreSQL is needed
+
+networks:
+  crawl4ai-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+    driver: local
+  postgres-data:
+    driver: local
