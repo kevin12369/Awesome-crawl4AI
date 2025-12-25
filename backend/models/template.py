@@ -9,9 +9,8 @@ Database model for scenario templates, storing crawl configurations
 from datetime import datetime
 from typing import Any
 
-from sqlalchemy import Boolean, DateTime, String, Text, Integer
+from sqlalchemy import Boolean, DateTime, String, Text, Integer, JSON
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy.json import JSON
 
 from .database import Base
 

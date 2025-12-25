@@ -129,7 +129,7 @@ async def init_db() -> None:
         # 艹，drop_existing=False别tm乱改成True！会删数据的！
         await conn.run_sync(Base.metadata.create_all)
 
-    print(f"✅ 数据库初始化完成: {DB_PATH}")
+    print(f"[OK] Database initialized: {DB_PATH}")
 
 
 async def close_db() -> None:
@@ -145,7 +145,7 @@ async def close_db() -> None:
         await _engine.dispose()
         _engine = None
         _async_session_factory = None
-        print("✅ 数据库连接已关闭")
+        print("[OK] Database connection closed")
 
 
 if __name__ == "__main__":
@@ -155,6 +155,6 @@ if __name__ == "__main__":
     """
     async def test_init():
         await init_db()
-        print("🎉 数据库初始化测试成功！")
+        print("[SUCCESS] Database initialization test passed!")
 
     asyncio.run(test_init())

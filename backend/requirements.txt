@@ -2,24 +2,24 @@
 # Python 3.10+ required
 
 # Web Framework
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-python-multipart==0.0.6
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
 
 # Database
-sqlalchemy==2.0.25
-aiosqlite==0.19.0
+sqlalchemy>=2.0.25
+aiosqlite~=0.20.0
 
 # Data Validation
-pydantic==2.5.3
-pydantic-settings==2.1.0
+pydantic>=2.5.3
+pydantic-settings>=2.1.0
 
 # Crawl4AI
-crawl4ai==0.7.8
-playwright==1.40.0
+crawl4ai>=0.7.8
+playwright>=1.40.0
 
 # HTTP Client
-httpx==0.26.0
+httpx>=0.26.0
 
 # WebSocket
 websockets==12.0
